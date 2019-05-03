@@ -29,7 +29,7 @@ if(prop.get('runMultiBrowserTest') === true) {
       strict: true,
       format: 'json:./reports/multiBrowser/results.json',
       require: [prop.get('stepDefinitionsPath'), "../support/*.js"],
-      tags: "(@AllureScenario or @CucumberScenario or @ProtractorScenario or @RegressionTest or @testsmoke) and (not @DatabaseTest)" // @DatabaseTest scenario can be included when the username & password of DB have been configured in Support/database.js
+      tags: ["@RegressionTest"] || ["@SmokeTest"]
     },
 
     onComplete: function () {
@@ -114,7 +114,7 @@ if(prop.get('runMultiBrowserTest') === true) {
       strict: true,
       format: 'json:./reports/singleBrowser/cucumber_report.json',
       require: [prop.get('stepDefinitionsPath'), "../support/*.js"],
-      tags: "(@AllureScenario or @CucumberScenario or @ProtractorScenario or @RegressionTest or @testsmoke) and (not @DatabaseTest)" // @DatabaseTest scenario can be included when the username & password of DB have been configured in Support/database.js
+      tags: ["@RegressionTest"] || ["@SmokeTest"]
     },
 
     onComplete: function () {
