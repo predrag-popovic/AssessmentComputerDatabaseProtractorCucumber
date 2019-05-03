@@ -1,4 +1,4 @@
-<h3>Automation Framework</h3>
+# Automation Framework
 
 <p>
 <i><strong>This framework example using JS programming language with integrated Cucumber framework and Protractor.
