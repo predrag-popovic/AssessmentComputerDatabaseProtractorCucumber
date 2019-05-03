@@ -87,7 +87,7 @@ webdriver-manager update --versions.chrome=2.46
 npm test
 ```
 
-#### Writing Features
+# Writing Features
 
 ``` 
 Feature: To search allure reports in google
@@ -99,7 +99,7 @@ Feature: To search allure reports in google
         Then I clear search textbox
 ```
 
-#### Writing Step Definitions
+# Writing Step Definitions
 
 ```
 "use strict";
@@ -112,7 +112,7 @@ const { Given } = require("cucumber");
   });
 ```
 
-#### Writing Page Objects
+# Writing Page Objects
 
 ```
 function googleSearch() {
@@ -122,7 +122,7 @@ function googleSearch() {
 module.exports = new googleSearch();
 ```
 
-#### Cucumber Hooks
+# Cucumber Hooks
 Following method takes screenshot on failure of each scenario
 
 ```     
@@ -138,7 +138,7 @@ After(function(scenario) {
        
 ```
 
-#### CucumberOpts Tags
+# CucumberOpts Tags
 Following configuration shows to call specific tags from feature files
 
 ```     
@@ -146,30 +146,8 @@ cucumberOpts: {
     strict: true,
     format: 'json:./reports/json/cucumber_report.json',
     require: ["../stepDefinitions/*.js", "../support/*.js"],
-    tags: "(@AllureScenario or @CucumberScenario or @ProtractorScenario)"
+    tags: ["@RegressionTest"] || ["@SmokeTest"]
 }
-```
-
-#### Database
-You need to install PostgreSQL nodejs modulewith this framework.
-
-```
-npm install -D pg
-```
-
-database feature file elaborates the connection and how the query results are retrieved.
- 
-```    
-const pg = require('pg');
-const connectDB = function() {
-const conString = "postgres://username:password@localhost:5432/database_name";
-this.client = new pg.Client(conString);
-this.client.connect(function(err){
-    if(err){
-        return console.error('could not connect to postgres', err);
-    }
-    });
-};
 ```
 
 #### HTML Reports
