@@ -63,6 +63,14 @@ webdriver-manager update
 webdriver-manager start
 ```
 
+* You can force webdriver-manager to use an older version of the selenium-standalone package.
+
+```sh
+webdriver-manager clean
+webdriver-manager update --standalone --versions.standalone=3.141.59
+webdriver-manager start --versions.standalone=3.141.59
+```
+
 * Leave the server running while you conduct your test sessions.
 
 * In your config file, set seleniumAddress to the address of the running server. This defaults to http://localhost:4444/wd/hub.
