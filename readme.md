@@ -53,13 +53,24 @@ npm install
 
 * Then first step is to fire up the selenium server which could be done in many ways,  **webdriver-manager** proves very handy for this.The below command should download the **chrome & gecko driver** binaries locally for you!
 
+```sh
+webdriver-manager update
 ```
-npm run webdriver-update
-``` 
 
 * Then you should start your selenium server!
+
+```sh
+webdriver-manager start
 ```
-npm run webdriver-start
+
+* Leave the server running while you conduct your test sessions.
+
+* In your config file, set seleniumAddress to the address of the running server. This defaults to http://localhost:4444/wd/hub.
+
+* Or you can update your Selenium webdriver for e.g. like this:
+
+```sh
+webdriver-manager update --versions.chrome=2.46
 ```
 
 * Following command will launch the chrome browser and run the scripts
