@@ -1,28 +1,37 @@
-<h3>Protractor-Cucumber-Allure Setup Guide</h3>
+<h3>Automation Framework</h3>
 
 <p>
-<a href="https://circleci.com/gh/igniteram/protractor-cucumber-allure/tree/master"><img alt="circleCI Status" src="https://circleci.com/gh/igniteram/protractor-cucumber-allure.svg?style=shield"></a>
-<a href="https://codeclimate.com/github/igniteram/protractor-cucumber-allure"><img alt="code climate status" src="https://codeclimate.com/github/igniteram/protractor-cucumber-allure/badges/gpa.svg"></a>
-<a href="https://opensource.org/licenses/MIT"><img alt="MIT License" src="https://img.shields.io/dub/l/vibe-d.svg"></a>
-</p>
-<p>
-<i><strong>This project demonstrates the basic protractor-cucumber framework project setup with Jenkins CI and Allure Reports integration</strong></i>
+<i><strong>This framework example using JS programming language with integrated Cucumber framework and Protractor.
+Automatic test used Selenium WebDriver (Chrome, Firefox, Edge, Safari) for executing tests and also this
+framework have support for Selenium Grid.</strong></i>
 </p>
 
 ---
 
 
 ### Features
-* Crisp & Clear folder structures
-* Page Object design pattern implementation
-* Extensive hooks implemented for BeforeAll, After etc.
-* MultiCapabalities and Test Sharding example
-* Screenshots on failure feature scenarios
-* PosgreSQL database connection feature example - see [Database](#database)
-* Support for cucumber-html-reports
-* Support for CI and Cucumber-Allure-Jenkins reports - check the [Caveat](#caveat) section below
 
-### To Get Started
+* Choose your Browser where you want to run your tests on local machine or using HUB and NODES
+* Writing a test case using Gherkin syntax
+* Generate two Report after test is finish 
+
+You can also:
+
+* Get Screenshot if test is failed
+
+### Tech
+
+Automation Basic Framework in order to work properly uses a number of dependencie:
+
+* [NodeJS](https://nodejs.org/en/) - As an asynchronous event driven JavaScript runtime, Node is designed to build scalable network applications.
+* [Protractor](https://www.protractortest.org/) - Protractor is an end-to-end test framework for Angular and AngularJS applications. Protractor runs tests against your application running in a real browser, interacting with it as a user would.
+* [Cucumber](https://docs.cucumber.io/) - Behaviour-Driven Development (BDD).
+* [Selenium](https://www.seleniumhq.org/download/) - Selenium has the support of some of the largest browser
+* [Selenium Grid](https://www.seleniumhq.org/docs/07_selenium_grid.jsp) - Selenium-Grid allows you run your tests on different machines against different browsers in parallel.
+
+# To Get Started
+
+## Installation
 
 #### Pre-requisites
 1.NodeJS installed globally in the system.
@@ -34,7 +43,7 @@ https://nodejs.org/en/download/
 
 3.Text Editor(Optional) installed-->Sublime/Visual Studio Code.
 
-#### Run Scripts
+## Run Scripts
 * Clone the repository into a folder
 * Go inside the folder and run following command from terminal/command prompt which would then install all the dependencies from package.json
 
