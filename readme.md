@@ -87,7 +87,7 @@ webdriver-manager update --versions.chrome=2.46
 npm test
 ```
 
-# Writing Features
+## Writing Features
 
 ``` 
 Feature: To search allure reports in google
@@ -99,7 +99,7 @@ Feature: To search allure reports in google
         Then I clear search textbox
 ```
 
-# Writing Step Definitions
+## Writing Step Definitions
 
 ```
 "use strict";
@@ -112,7 +112,7 @@ const { Given } = require("cucumber");
   });
 ```
 
-# Writing Page Objects
+## Writing Page Objects
 
 ```
 function googleSearch() {
@@ -122,7 +122,7 @@ function googleSearch() {
 module.exports = new googleSearch();
 ```
 
-# Cucumber Hooks
+## Cucumber Hooks
 Following method takes screenshot on failure of each scenario
 
 ```     
@@ -138,7 +138,7 @@ After(function(scenario) {
        
 ```
 
-# CucumberOpts Tags
+## CucumberOpts Tags
 Following configuration shows to call specific tags from feature files
 
 ```     
