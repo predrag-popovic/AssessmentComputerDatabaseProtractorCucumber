@@ -6,6 +6,11 @@ const report = require('multiple-cucumber-html-reporter');
 var PropertiesReader = require('properties-reader');
 var prop = PropertiesReader('./properties/prop.properties');
 
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
+
 if(prop.get('runMultiBrowserTest') === true) {
 
   exports.config = {
@@ -53,7 +58,7 @@ if(prop.get('runMultiBrowserTest') === true) {
             { label: 'Project', value: 'Custom project' },
             { label: 'Release', value: '1.2.3' },
             { label: 'Cycle', value: 'B11221.34321' },
-            { label: 'Execution Start Time', value: 'Nov 19th 2017, 02:31 PM EST' },
+            { label: 'Execution Start Time', value: dateTime },
             { label: 'Execution End Time', value: 'Nov 19th 2017, 02:56 PM EST' }
           ],
           metadata: [
