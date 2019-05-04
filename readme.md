@@ -154,11 +154,9 @@ cucumberOpts: {
 Currently this project has been integrated with two types of cucumber HTML reports just for demo, which are generated when you run `npm test` in the `reports` folder.
 They can be customized according to user's specific needs-
 * [cucumber-html-reporter](https://github.com/gkushang/cucumber-html-reporter)
-
 * [cucumber-html-report](https://github.com/leinonen/cucumber-html-report)
 
 ![cucumberreporterscreen](https://raw.githubusercontent.com/igniteram/protractor-cucumber-allure/master/images/cucumberReporter.PNG)
-
 ![cucumberreportscreen](https://raw.githubusercontent.com/igniteram/protractor-cucumber-allure/master/images/cucumberReport.png)
 
 ### Multiple Cucumber Html reporter
