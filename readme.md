@@ -168,7 +168,7 @@ Multiple Cucumber HTML Reporter is a reporting module for Cucumber to parse the 
 * a features overview that can be searched / filtered / sorted
 * a feature(s) overview with metadata of the used browser(s) / devices
 
-#### Allure Reports
+## Allure Reports
 
 ##### Caveat
 
