@@ -168,6 +168,39 @@ Multiple Cucumber HTML Reporter is a reporting module for Cucumber to parse the 
 * a features overview that can be searched / filtered / sorted
 * a feature(s) overview with metadata of the used browser(s) / devices
 
+We must define this report in protractor.conf.js
+```sh
+plugins: [{
+    package: require.resolve('protractor-multiple-cucumber-html-reporter-plugin'),
+    options: {
+      automaticallyGenerateReport: true,
+      removeExistingJsonReportFile: true,
+      removeOriginalJsonReportFile: true,
+      openReportInBrowser: true,
+      metadataKey: true,
+      reportName: 'CucumberJS Report',
+      pageFooter: '<div><p>Created by Predrag popovic</p></div>',
+      pageTitle: 'Cucumber JS with Protractor Report',
+      customData: {
+        title: 'Execution info',
+        data: [
+          { label: 'Project', value: 'Custom project' },
+          { label: 'Release', value: '1.2.3' },
+          { label: 'Cycle', value: 'B11221.34321' },
+          { label: 'Execution Start Time', value: 'Nov 19th 2017, 02:31 PM EST' },
+          { label: 'Execution End Time', value: 'Nov 19th 2017, 02:56 PM EST' }
+        ],
+        metadata: [
+          {name: 'Environment v.', value: '12.3'},
+          {name: 'Plugin v.', value: '32.1'},
+          {name: 'Variable set', value: 'Foo'}
+      ],
+      },
+      displayDuration:true
+    }
+  }],
+  ```
+
 ## Allure Reports
 
 ##### Caveat
