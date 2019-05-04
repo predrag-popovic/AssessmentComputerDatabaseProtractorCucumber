@@ -168,10 +168,6 @@ Multiple Cucumber HTML Reporter is a reporting module for Cucumber to parse the 
 * a features overview that can be searched / filtered / sorted
 * a feature(s) overview with metadata of the used browser(s) / devices
 
-![cucumberreporterscreen](https://raw.githubusercontent.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber/master/images/multipleCucumberHtmlReporter1.png?token=AKFGQLFAHGOJDSFYJR2DY3S4ZX76O)
-
-https://github.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber/blob/master/images/multipleCucumberHtmlReporter1.png
-
 We must define this report in protractor.conf.js
 ```sh
 plugins: [{
@@ -204,6 +200,10 @@ plugins: [{
     }
   }],
   ```
+
+![cucumberreporterscreen](https://raw.githubusercontent.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber/master/images/multipleCucumberHtmlReporter1.png?token=AKFGQLFAHGOJDSFYJR2DY3S4ZX76O)
+
+![cucumberreporterscreen](https://raw.githubusercontent.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber/master/images/multipleCucumberHtmlReporter2.png?token=AKFGQLFFFCBT37JCI7ZAL324ZYAHI)
 
 ## Allure Reports
 
