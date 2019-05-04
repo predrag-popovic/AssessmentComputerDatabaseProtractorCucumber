@@ -150,7 +150,7 @@ cucumberOpts: {
 }
 ```
 
-### Cucumber HTML Reports
+## Cucumber HTML Reports
 Currently this project has been integrated with two types of cucumber HTML reports just for demo, which are generated when you run `npm test` in the `reports` folder.
 They can be customized according to user's specific needs-
 * [cucumber-html-reporter](https://github.com/gkushang/cucumber-html-reporter)
@@ -159,7 +159,7 @@ They can be customized according to user's specific needs-
 ![cucumberreporterscreen](https://raw.githubusercontent.com/igniteram/protractor-cucumber-allure/master/images/cucumberReporter.PNG)
 ![cucumberreportscreen](https://raw.githubusercontent.com/igniteram/protractor-cucumber-allure/master/images/cucumberReport.png)
 
-### Multiple Cucumber Html reporter
+## Multiple Cucumber Html reporter
 
 Multiple Cucumber HTML Reporter is a reporting module for Cucumber to parse the JSON output to a beautiful report. The difference between all the other reporting modules on the market is that this module has:
 
