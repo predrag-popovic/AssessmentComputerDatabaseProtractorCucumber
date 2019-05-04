@@ -168,6 +168,8 @@ Multiple Cucumber HTML Reporter is a reporting module for Cucumber to parse the 
 * a features overview that can be searched / filtered / sorted
 * a feature(s) overview with metadata of the used browser(s) / devices
 
+![cucumberreporterscreen](https://raw.githubusercontent.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber/blob/master/images/multipleCucumberHtmlReporter1.PNG)
+
 We must define this report in protractor.conf.js
 ```sh
 plugins: [{
