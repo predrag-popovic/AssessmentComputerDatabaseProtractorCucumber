@@ -146,7 +146,7 @@ cucumberOpts: {
     strict: true,
     format: 'json:./reports/json/cucumber_report.json',
     require: ["../stepDefinitions/*.js", "../support/*.js"],
-    tags: ["@RegressionTest"] || ["@SmokeTest"]
+    tags: "@RegressionTest or @SmokeTest",
 }
 ```
 
