@@ -34,7 +34,7 @@ if(prop.get('runMultiBrowserTest') === true) {
       strict: true,
       format: 'json:./reports/multiBrowser/results.json',
       require: [prop.get('stepDefinitionsPath'), "../support/*.js"],
-      tags: ["@RegressionTest"] || ["@SmokeTest"]
+      tags: "@RegressionTest or @SmokeTest",
     },
 
     onComplete: function () {
@@ -119,7 +119,7 @@ if(prop.get('runMultiBrowserTest') === true) {
       strict: true,
       format: 'json:./reports/singleBrowser/cucumber_report.json',
       require: [prop.get('stepDefinitionsPath'), "../support/*.js"],
-      tags: ["@RegressionTest"] || ["@SmokeTest"]
+      tags: "@RegressionTest or @SmokeTest",
     },
 
     onComplete: function () {
