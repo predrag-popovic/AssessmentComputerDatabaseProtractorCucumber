@@ -65,3 +65,38 @@ Then(/^Verify that User will not update computer data if he remove name and vali
 
     return expect(updateComputer.getActualResult()).to.eventually.equal(`${validationForComputerName}`);
 });
+
+
+When(/^Select Computer and try to update with wrong format "([^"]*)" for Introduced date and try to save these changes$/, function (string) {
+
+    return updateComputer.enterDataInSearchField(`${computerName}`)
+        .then(() => updateComputer.clickOnButtonCreateThisComputer())
+        .then(() => updateComputer.clickOnButtonSearch())
+        .then(() => updateComputer.clickOnComputerNameFromList())
+        .then(() => updateComputer.cleanDataFromFieldIntroducedDate())
+        .then(() => updateComputer.enterDateInIntroducedField(string))
+        .then(() => updateComputer.clickOnButtonCreateThisComputer());
+});
+
+Then(/^Verify that User will not update computer data if he remove name and validation notification will activate on Introduced date$/, function () {
+
+    return expect(updateComputer.getActualResult()).to.eventually.equal(`${validationForIntroducedDate}`);
+});
+
+
+When(/^Select Computer and try to update with wrong format "([^"]*)" for Discontinued date$/, function (string) {
+
+    return updateComputer.enterDataInSearchField(`${computerName}`)
+        .then(() => updateComputer.clickOnButtonCreateThisComputer())
+        .then(() => updateComputer.clickOnButtonSearch())
+        .then(() => updateComputer.clickOnComputerNameFromList())
+        .then(() => updateComputer.clearDataFromfieldDiscontinuedDate())
+        .then(() => updateComputer.enterDateInDiscontinuedField(string))
+        .then(() => updateComputer.clickOnButtonCreateThisComputer());
+
+});
+
+Then(/^Verify that User will not update computer data if he remove name and validation notification will activate on Discontinued Date$/, function () {
+
+    return expect(updateComputer.getActualResult()).to.eventually.equal(`${validationForDiscontinuedDate}`);
+});
