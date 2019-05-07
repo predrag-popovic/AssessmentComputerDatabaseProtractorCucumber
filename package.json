@@ -1,9 +1,8 @@
 {
-  "name": "protractor-cucumber-allure",
+  "name": "protractor-cucumber",
   "version": "3.0.0",
-  "license": "MIT",
   "description": "To demostrate protractor cucumber tests for angular/non angular apps with allure report framework",
-  "homepage": "https://github.com/igniteram/protractor-cucumber-allure",
+  "homepage": "https://github.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber",
   "keywords": [
     "protractor",
     "cucumber",
@@ -15,7 +14,6 @@
     "bdd",
     "selenium",
     "webdriverJS",
-    "posgreSQL",
     "gherkin",
     "automation testing"
   ],
