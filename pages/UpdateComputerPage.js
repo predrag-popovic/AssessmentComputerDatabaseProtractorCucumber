@@ -179,6 +179,20 @@ class UpdateComputerPage extends base {
     }
 
     /***
+    * Remove text from Introduced Date field
+    */
+    cleanDataFromFieldIntroducedDate() {
+        return this.$fieldIntroducedDate.clear();
+    }
+
+    /***
+    * Remove text from Discontinued Date field
+    */
+    clearDataFromfieldDiscontinuedDate() {
+        return this.$fieldDiscontinuedDate.clear();
+    }
+
+    /***
    * Get Actual resoult
    */
     getActualResult() {
