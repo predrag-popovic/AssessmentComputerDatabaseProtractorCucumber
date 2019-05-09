@@ -2,6 +2,10 @@
 import { element, $ } from "protractor";
 import Globals from '../support/Globals';
 import base from '../elements/base';
+import button from '../elements/button_action';
+import input from '../elements/button_action';
+import scroll from '../elements/scroll_action';
+import wait from '../elements/wait_action';
 
 // Chai
 const globals = new Globals();
@@ -19,69 +23,78 @@ var validationFieldNotification = "div.clearfix.error > label";
 var searchField = "searchbox";
 var filterByName = "searchsubmit";
 
-class CreateNewComputerPage extends base {
+class CreateNewComputerPage {
+
+    constructor(){
+
+        this.base_action = new base();
+        this.button_action = new button();
+        this.input_action = new input();
+        this.wait_action = new wait();
+        this.scroll_action = new scroll();
+    }
 
     /***
     * Element for button add new Computer
     */
     get $buttonAddNewComputer() {
-        return this.findElementById(`${addNewComputer}`);
+        return this.base_action.findElementById(`${addNewComputer}`);
     }
 
     /***
     * Element for button create this computer
     */
     get $buttonCreateThisComputer() {
-        return this.findElementByCss(`${createThisComputer}`);
+        return this.base_action.findElementByCss(`${createThisComputer}`);
     }
 
     /***
     * Element for data in Introduced Date Field
     */
     get $dataInIntroducedDateField() {
-        return this.findElementById(`${introducedField}`);
+        return this.base_action.findElementById(`${introducedField}`);
     }
 
     /***
    * Element for data in Discontinued Date Field
    */
     get $dataInDiscontinuedDateField() {
-        return this.findElementById(`${discontinuedField}`);
+        return this.base_action.findElementById(`${discontinuedField}`);
     }
 
     /***
    * Actual result
    */
     get $actualResult() {
-        return this.findElementByCss(`${validationFieldNotification}`);
+        return this.base_action.findElementByCss(`${validationFieldNotification}`);
     }
 
     /***
     * Click on add New Computer
     */
     clickOnAddNewComputer() {
-        return this.waitAndClick(this.$buttonAddNewComputer, 10000);
+        return this.wait_action.waitAndClick(this.$buttonAddNewComputer, 10000);
     }
 
     /***
     * Click on button create this computer
     */
     clickOnButtonCreateThisComputer() {
-        return this.waitAndClick(this.$buttonCreateThisComputer, 10000);
+        return this.wait_action.waitAndClick(this.$buttonCreateThisComputer, 10000);
     }
 
     /***
     * Enter data in Introduced Date Field
     */
     enterDataInIntroducedDateFiel(string) {
-        return this.waitAndType(this.$dataInIntroducedDateField, 10000, string);
+        return this.wait_action.waitAndType(this.$dataInIntroducedDateField, 10000, string);
     }
 
     /***
     * Enter Data In Discontinued Date Field
     */
     enterDataInDiscontinuedDateField(string) {
-        return this.waitAndType(this.$dataInDiscontinuedDateField, 10000, string);
+        return this.wait_action.waitAndType(this.$dataInDiscontinuedDateField, 10000, string);
     }
 
     /***
