@@ -2,8 +2,6 @@
 import { element, $ } from "protractor";
 import Globals from '../support/Globals';
 import base from '../elements/base';
-import { get } from "http";
-import { basename } from "path";
 
 // Chai
 const globals = new Globals();
