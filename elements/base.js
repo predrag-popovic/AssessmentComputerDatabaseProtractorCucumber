@@ -5,6 +5,62 @@ const EC = protractor.ExpectedConditions;
 module.exports = class base {
 
     /**
+     * Find element by Id
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementById($element) {
+        return element(by.id($element));
+    }
+
+    /**
+     * Find element by cssSelector
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByCss($element) {
+        return element(by.css($element));
+    }
+
+    /**
+     * Find element by Link text
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByLinkText($element) {
+        return element(by.linkText($element));
+    }
+
+    /**
+     * Find element by Xpath
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByXpath($element) {
+        return element(by.xpath($element));
+    }
+
+    /**
+     * Find element by Name
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByName($element) {
+        return element(by.name($element));
+    }
+
+    /**
+     * Find element by Class name
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByClassName($element) {
+        return element(by.className($element));
+    }
+
+    /**
+     * Find element by Test hook
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByTestHook($element) {
+        return element(by.testHook($element));
+    }
+
+    /**
      * Wait element till enabled
      * @param {protractor.ElementFinder} element - location of the element .
      */
