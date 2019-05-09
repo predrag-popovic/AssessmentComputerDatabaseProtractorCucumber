@@ -33,78 +33,74 @@ var computerName = "GeckoComputerTest";
 
 class UpdateComputerPage extends base {
 
-    constructor() {
-        super('elements/base');
-    }
-
     /***
     * Element for button add new Computer
     */
     get $buttonAddNewComputer() {
-        return element(by.id(`${addNewComputer}`));
+        return this.findElementById(`${addNewComputer}`);
     }
 
     /***
     * Element for button create this computer
     */
     get $buttonCreateThisComputer() {
-        return element(by.css(`${createThisComputer}`));
+        return this.findElementByCss(`${createThisComputer}`);
     }
 
     /***
     * Element for field Computer name
     */
     get $fieldComputerName() {
-        return element(by.id(`${computerNameField}`));
+        return this.findElementById(`${computerNameField}`);
     }
 
     /***
     * Element for field Introduced Date
     */
     get $fieldIntroducedDate() {
-        return element(by.id(`${introducedField}`));
+        return this.findElementById(`${introducedField}`);
     }
 
     /***
     * Element for field Discontinued Date
     */
     get $fieldDiscontinuedDate() {
-        return element(by.id(`${discontinuedField}`));
+        return this.findElementById(`${discontinuedField}`);
     }
 
     /***
     * Element for search field
     */
     get $searchfield() {
-        return element(by.id(`${searchField}`));
+        return this.findElementById(`${searchField}`);
     }
 
     /***
     * Element for search button
     */
     get $buttonSearch() {
-        return element(by.id(`${filterByName}`));
+        return this.findElementById(`${filterByName}`);
     }
 
     /***
     * Element for Company field
     */
     get $openCompanyField() {
-        return element(by.id(`${companyField}`));
+        return this.findElementById(`${companyField}`);
     }
 
     /***
     * List of computer
     */
     get $listOfComputer() {
-        return element(by.linkText(`${computerName}` + `${timeStampInMs}`));
+        return this.findElementByLinkText(`${computerName}` + `${timeStampInMs}`);
     }
 
     /***
   * Actual result
   */
     get $actualResult() {
-        return element(by.css(`${validationFieldNotification}`));
+        return this.findElementByCss(`${validationFieldNotification}`);
     }
 
     /***
@@ -176,20 +172,6 @@ class UpdateComputerPage extends base {
     */
     cleanDataFromComputerNameField() {
         return this.$fieldComputerName.clear();
-    }
-
-    /***
-    * Remove text from Introduced Date field
-    */
-    cleanDataFromFieldIntroducedDate() {
-        return this.$fieldIntroducedDate.clear();
-    }
-
-    /***
-    * Remove text from Discontinued Date field
-    */
-    clearDataFromfieldDiscontinuedDate() {
-        return this.$fieldDiscontinuedDate.clear();
     }
 
     /***
