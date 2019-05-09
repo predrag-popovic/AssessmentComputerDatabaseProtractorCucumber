@@ -23,43 +23,39 @@ var filterByName = "searchsubmit";
 
 class CreateNewComputerPage extends base {
 
-    constructor() {
-        super('elements/base');
-    }
-
     /***
     * Element for button add new Computer
     */
     get $buttonAddNewComputer() {
-        return element(by.id(`${addNewComputer}`));
+        return this.findElementById(`${addNewComputer}`);
     }
 
     /***
     * Element for button create this computer
     */
     get $buttonCreateThisComputer() {
-        return element(by.css(`${createThisComputer}`));;
+        return this.findElementByCss(`${createThisComputer}`);
     }
 
     /***
     * Element for data in Introduced Date Field
     */
     get $dataInIntroducedDateField() {
-        return element(by.id(`${introducedField}`));
+        return this.findElementById(`${introducedField}`);
     }
 
     /***
    * Element for data in Discontinued Date Field
    */
     get $dataInDiscontinuedDateField() {
-        return element(by.id(`${discontinuedField}`));
+        return this.findElementById(`${discontinuedField}`);
     }
 
     /***
    * Actual result
    */
     get $actualResult() {
-        return element(by.css(`${validationFieldNotification}`));
+        return this.findElementByCss(`${validationFieldNotification}`);
     }
 
     /***
