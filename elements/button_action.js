@@ -1,11 +1,70 @@
 'use strict';
+import base from '../elements/base';
+
 const protractor = require('protractor');
 const EC = protractor.ExpectedConditions;
 
 class button_action {
 
     constructor() {
+        
+        this.base_action = new base();
+    }
+    
+    /**
+     * Click on Element by Id
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByIdAndClick($element){
+        return this.base_action.findElementById($element).click();
+    }
 
+    /**
+     * Click on Element by Css
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByCssAndClick($element){
+        return this.base_action.findElementByCss($element).click();
+    }
+
+    /**
+     * Click on Element by Xpath
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByXpathAndClick($element){
+        return this.base_action.findElementByXpath($element).click();
+    }
+
+    /**
+     * Click on Element by LinkText
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByLinkTextAndClick($element){
+        return this.base_action.findElementByLinkText($element).click();
+    }
+
+    /**
+     * Click on Element by Test Hook
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByTestHookAndClick($element){
+        return this.base_action.findElementByTestHook($element).click();
+    }
+
+    /**
+     * Click on Element by Name
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByNameAndClick($element){
+        return this.base_action.findElementByName($element).click();
+    }
+
+    /**
+     * Click on Element by Class name
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    findElementByClassNameAndClick($element){
+        return this.base_action.findElementByClassName($element).click();
     }
 
     /**
