@@ -1,6 +1,10 @@
 'use strict';
+
 const protractor = require('protractor');
 const EC = protractor.ExpectedConditions;
+
+var log4js = require('log4js');
+var log = log4js.getLogger("base");
 
 class base {
 
@@ -13,6 +17,7 @@ class base {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     findElementById($element) {
+        log.info('Element which is located by Id:'+ $element);
         return element(by.id($element));
     }
 
@@ -21,6 +26,7 @@ class base {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     findElementByCss($element) {
+        log.info('Element which is located by Css:'+ $element);
         return element(by.css($element));
     }
 
@@ -29,6 +35,7 @@ class base {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     findElementByLinkText($element) {
+        log.info('Element which is located by LinkText:'+ $element);
         return element(by.linkText($element));
     }
 
@@ -37,6 +44,7 @@ class base {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     findElementByXpath($element) {
+        log.info('Element which is located by Xpath:'+ $element);
         return element(by.xpath($element));
     }
 
@@ -45,6 +53,7 @@ class base {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     findElementByName($element) {
+        log.info('Element which is located by Name:'+ $element);
         return element(by.name($element));
     }
 
@@ -53,6 +62,7 @@ class base {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     findElementByClassName($element) {
+        log.info('Element which is located by Class Name:'+ $element);
         return element(by.className($element));
     }
 
@@ -61,6 +71,7 @@ class base {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     findElementByTestHook($element) {
+        log.info('Element which is located by Test Hook:'+ $element);
         return element(by.testHook($element));
     }
 
