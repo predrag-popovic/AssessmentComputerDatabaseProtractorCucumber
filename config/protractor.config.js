@@ -11,6 +11,24 @@ var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 var dateTime = date+' '+time;
 
+/**
+ * Make a log directory, just in case it isn't there.
+ */
+try {
+  require('fs').mkdirSync('./log');
+} catch (e) {
+  if (e.code != 'EEXIST') {
+    console.error("Could not set up log directory, error was: ", e);
+    process.exit(1);
+  }
+}
+
+/**
+ * Initialise log4js first, so we don't miss any log messages
+ */
+var log4js = require('log4js');
+log4js.configure('./config/log4js.json');
+
 if(prop.get('runMultiBrowserTest') === true) {
 
   exports.config = {
