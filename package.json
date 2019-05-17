@@ -42,6 +42,7 @@
   },
   "repository": "https://github.com/igniteram/protractor-cucumber-allure",
   "dependencies": {
+    "log4js": "^4.2.0",
     "properties-reader": "0.0.16"
   }
 }
