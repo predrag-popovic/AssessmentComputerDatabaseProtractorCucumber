@@ -1,70 +1,14 @@
 'use strict';
-import base from '../elements/base';
-
 const protractor = require('protractor');
 const EC = protractor.ExpectedConditions;
+
+var log4js = require('log4js');
+var log = log4js.getLogger("base");
 
 class button_action {
 
     constructor() {
-        
-        this.base_action = new base();
-    }
-    
-    /**
-     * Click on Element by Id
-     * @param {protractor.ElementFinder} element - location of the element .
-     */
-    findElementByIdAndClick($element){
-        return this.base_action.findElementById($element).click();
-    }
 
-    /**
-     * Click on Element by Css
-     * @param {protractor.ElementFinder} element - location of the element .
-     */
-    findElementByCssAndClick($element){
-        return this.base_action.findElementByCss($element).click();
-    }
-
-    /**
-     * Click on Element by Xpath
-     * @param {protractor.ElementFinder} element - location of the element .
-     */
-    findElementByXpathAndClick($element){
-        return this.base_action.findElementByXpath($element).click();
-    }
-
-    /**
-     * Click on Element by LinkText
-     * @param {protractor.ElementFinder} element - location of the element .
-     */
-    findElementByLinkTextAndClick($element){
-        return this.base_action.findElementByLinkText($element).click();
-    }
-
-    /**
-     * Click on Element by Test Hook
-     * @param {protractor.ElementFinder} element - location of the element .
-     */
-    findElementByTestHookAndClick($element){
-        return this.base_action.findElementByTestHook($element).click();
-    }
-
-    /**
-     * Click on Element by Name
-     * @param {protractor.ElementFinder} element - location of the element .
-     */
-    findElementByNameAndClick($element){
-        return this.base_action.findElementByName($element).click();
-    }
-
-    /**
-     * Click on Element by Class name
-     * @param {protractor.ElementFinder} element - location of the element .
-     */
-    findElementByClassNameAndClick($element){
-        return this.base_action.findElementByClassName($element).click();
     }
 
     /**
@@ -72,6 +16,7 @@ class button_action {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     clickAfterEnabled($element) {
+        log.info('Click on element after enabled:'+ $element);
         return this.waitTillEnabled($element).then(() => $element.click());
     }
 
@@ -80,6 +25,7 @@ class button_action {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     clickAfterClickable($element) {
+        log.info('Click on element after clickable:'+ $element);
         return this.waitTillClickable($element).then(() => $element.click());
     }
 
@@ -88,6 +34,7 @@ class button_action {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     clickAfterVisible($element) {
+        log.info('Click on element after visible:'+ $element);
         return this.waitTillVisible($element).then(() => $element.click());
     }
 
@@ -96,6 +43,7 @@ class button_action {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     clickAfterPresent($element) {
+        log.info('Click on element after present:'+ $element);
         return this.waitTillPresent($element).then(() => $element.click());
     }
 
@@ -104,6 +52,7 @@ class button_action {
      * @param {protractor.ElementFinder} element - location of the element .
      */
     doubleClick($element) {
+        log.info('Double click on element:'+ $element);
         return browser.actions().doubleClick($element).perform();
     }
 }
