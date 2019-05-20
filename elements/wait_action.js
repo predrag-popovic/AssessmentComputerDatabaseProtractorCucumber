@@ -91,7 +91,6 @@ class wait_action {
      * @param {string} string - set test data that we want to enter.
      */
     waitElementByIdAndType($element, timeOut, string) {
-        
         return this.waitTillVisible(this.base_action.findElementById($element), timeOut)
         .then(() => this.base_action.findElementById($element).sendKeys(string))
         .then(() => log.info('Wait element By Id:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
