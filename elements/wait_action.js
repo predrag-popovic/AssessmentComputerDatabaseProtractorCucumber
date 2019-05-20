@@ -107,6 +107,18 @@ class wait_action {
         .then(() => this.base_action.findElementByCss($element).sendKeys(string))
         .then(() => log.info('Wait element By Css:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
     }
+    
+    /**
+     * Wait element By Xpath and type
+     * @param {protractor.ElementFinder} element - location of the element .
+     * @param {string} timeOut - set time for timeout.
+     * @param {string} string - set test data that we want to enter.
+     */
+    waitElementByXpathAndType($element, timeOut, string) {
+        return this.waitTillVisible(this.base_action.findElementByXpath($element), timeOut)
+        .then(() => this.base_action.findElementByXpath($element).sendKeys(string))
+        .then(() => log.info('Wait element By Xpath:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
+    }
 
     /**
      * Wait element till enabled
