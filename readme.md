@@ -150,6 +150,54 @@ cucumberOpts: {
 }
 ```
 
+## Create Log file using Log4js
+This is a conversion of the log4js framework to work with node. I started out just stripping out the browser-specific code and tidying up some of the javascript to work better in node. It grew from there. Although it's got a similar name to the Java library log4j, thinking that it will behave the same way will only bring you sorrow and confusion.
+
+### Instalation
+```
+npm install log4js
+```
+
+We must create in config folder Json file in order to configure log4js:
+```
+{
+  "appenders": {
+    "access": {
+      "type": "dateFile",
+      "filename": "log/access.log",
+      "pattern": "-yyyy-MM-dd",
+      "category": "http"
+    },
+    "app": {
+      "type": "file",
+      "filename": "log/app.log",
+      "maxLogSize": 10485760,
+      "numBackups": 1
+    },
+    "errorFile": {
+      "type": "file",
+      "filename": "log/errors.log"
+    },
+    "errors": {
+      "type": "logLevelFilter",
+      "level": "ERROR",
+      "appender": "errorFile"
+    }
+  },
+  "categories": {
+    "default": { "appenders": [ "app", "errors", "access" ], "level": "INFO" },
+    "http": { "appenders": [ "access"], "level": "INFO" }
+  }
+}
+```
+
+and call log4js in any class that you want to use
+
+```
+var log4js = require('log4js');
+var log = log4js.getLogger("base");
+```
+
 ## Cucumber HTML Reports
 Currently this project has been integrated with two types of cucumber HTML reports just for demo, which are generated when you run `npm test` in the `reports` folder.
 They can be customized according to user's specific needs-
