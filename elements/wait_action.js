@@ -1,4 +1,6 @@
 'use strict';
+import base from '../elements/base';
+
 const protractor = require('protractor');
 const EC = protractor.ExpectedConditions;
 
@@ -8,7 +10,78 @@ var log = log4js.getLogger("base");
 class wait_action {
 
     constructor() {
+        
+        this.base_action = new base();
+    }
+    
+    /**
+     * Wait element by Id to be clickable and click
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    waitElementByIdAndClick($element) {
+        return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementById($element)))
+        .then(() => this.base_action.findElementById($element).click())
+        .then(() => log.info('Wait element by Id:'+'('+$element +')'+'to be clickable and click'));
+    }
 
+    /**
+     * Wait element by Css to be clickable and click
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    waitElementByCssAndClick($element) {
+        return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByCss($element)))
+        .then(() => this.base_action.findElementByCss($element).click())
+        .then(() => log.info('Wait element by Css:'+'('+$element +')'+'to be clickable and click'));
+    }
+
+    /**
+     * Wait element by Xpath to be clickable and click
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    waitElementByXpathAndClick($element) {
+        return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByXpath($element)))
+        .then(() => this.base_action.findElementByXpath($element).click())
+        .then(() => log.info('Wait element by Xpath:'+'('+$element +')'+'to be clickable and click'));
+    }
+
+    /**
+     * Wait element by LinkText to be clickable and click
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    waitElementByLinkTextpathAndClick($element) {
+        return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByLinkText($element)))
+        .then(() => this.base_action.findElementByLinkText($element).click())
+        .then(() => log.info('Wait element by LinkText:'+'('+$element +')'+'to be clickable and click'));
+    }
+
+    /**
+     * Wait element by TestHook to be clickable and click
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    waitElementByTestHookAndClick($element) {
+        return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByTestHook($element)))
+        .then(() => this.base_action.findElementByTestHook($element).click())
+        .then(() => log.info('Wait element by TestHook:'+'('+$element +')'+'to be clickable and click'));
+    }
+
+    /**
+     * Wait element by Name to be clickable and click
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    waitElementByNameAndClick($element) {
+        return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByName($element)))
+        .then(() => this.base_action.findElementByName($element).click())
+        .then(() => log.info('Wait element by Name:'+'('+$element +')'+'to be clickable and click'));
+    }
+
+    /**
+     * Wait element by Class Name to be clickable and click
+     * @param {protractor.ElementFinder} element - location of the element .
+     */
+    waitElementByclassNameAndClick($element) {
+        return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByClassName($element)))
+        .then(() => this.base_action.findElementByClassName($element).click())
+        .then(() => log.info('Wait element by Class name:'+'('+$element +')'+'to be clickable and click'));
     }
 
     /**
