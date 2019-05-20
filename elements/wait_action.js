@@ -83,6 +83,19 @@ class wait_action {
         .then(() => this.base_action.findElementByClassName($element).click())
         .then(() => log.info('Wait element by Class name:'+'('+$element +')'+'to be clickable and click'));
     }
+    
+    /**
+     * Wait element By Id and type
+     * @param {protractor.ElementFinder} element - location of the element .
+     * @param {string} timeOut - set time for timeout.
+     * @param {string} string - set test data that we want to enter.
+     */
+    waitElementByIdAndType($element, timeOut, string) {
+        
+        return this.waitTillVisible(this.base_action.findElementById($element), timeOut)
+        .then(() => this.base_action.findElementById($element).sendKeys(string))
+        .then(() => log.info('Wait element By Id:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
+    }
 
     /**
      * Wait element till enabled
