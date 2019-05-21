@@ -3,7 +3,7 @@ import { element, $ } from "protractor";
 import Globals from '../support/Globals';
 import base from '../elements/base';
 import button from '../elements/button_action';
-import input from '../elements/button_action';
+import input from '../elements/input_action';
 import scroll from '../elements/scroll_action';
 import wait from '../elements/wait_action';
 
