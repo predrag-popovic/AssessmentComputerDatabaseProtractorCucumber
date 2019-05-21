@@ -80,14 +80,14 @@ class CreateNewComputerPage {
     * Click on button create this computer
     */
     clickOnButtonCreateThisComputer() {
-        return this.wait_action.waitAndClick(this.$buttonCreateThisComputer, 10000);
+        return this.wait_action.waitElementByCssAndClick(`${createThisComputer}`);
     }
 
     /***
     * Enter data in Introduced Date Field
     */
     enterDataInIntroducedDateFiel(string) {
-        return this.wait_action.waitAndType(this.$dataInIntroducedDateField, 10000, string);
+        return this.wait_action.waitElementByIdAndType(`${introducedField}`, 10000, string);
     }
 
     /***
