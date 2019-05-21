@@ -182,7 +182,7 @@ class UpdateComputerPage {
     * Remove text from Computer name field
     */
     cleanDataFromComputerNameField() {
-        return this.$fieldComputerName.clear();
+        return this.input_action.findElementByIdAndClear(`${computerNameField}`);
     }
 
     /***
