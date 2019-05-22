@@ -20,8 +20,10 @@ class wait_action {
      */
     waitElementByIdAndClick($element) {
         return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementById($element)))
-        .then(() => this.base_action.findElementById($element).click())
-        .then(() => log.info('Wait element by Id:'+'('+$element +')'+'to be clickable and click'));
+        .then(() => {
+            this.base_action.findElementById($element).click();
+            log.info('Wait element by Id:'+'('+$element +')'+'to be clickable and click');
+        })
     }
 
     /**
@@ -30,8 +32,10 @@ class wait_action {
      */
     waitElementByCssAndClick($element) {
         return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByCss($element)))
-        .then(() => this.base_action.findElementByCss($element).click())
-        .then(() => log.info('Wait element by Css:'+'('+$element +')'+'to be clickable and click'));
+        .then(() => {
+            this.base_action.findElementByCss($element).click();
+            log.info('Wait element by Css:'+'('+$element +')'+'to be clickable and click');
+        })
     }
 
     /**
@@ -40,8 +44,10 @@ class wait_action {
      */
     waitElementByXpathAndClick($element) {
         return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByXpath($element)))
-        .then(() => this.base_action.findElementByXpath($element).click())
-        .then(() => log.info('Wait element by Xpath:'+'('+$element +')'+'to be clickable and click'));
+        .then(() => {
+            this.base_action.findElementByXpath($element).click();
+            log.info('Wait element by Xpath:'+'('+$element +')'+'to be clickable and click');
+        })
     }
 
     /**
@@ -50,8 +56,10 @@ class wait_action {
      */
     waitElementByLinkTextpathAndClick($element) {
         return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByLinkText($element)))
-        .then(() => this.base_action.findElementByLinkText($element).click())
-        .then(() => log.info('Wait element by LinkText:'+'('+$element +')'+'to be clickable and click'));
+        .then(() => {
+            this.base_action.findElementByLinkText($element).click();
+            log.info('Wait element by LinkText:'+'('+$element +')'+'to be clickable and click');
+        })
     }
 
     /**
@@ -60,8 +68,10 @@ class wait_action {
      */
     waitElementByTestHookAndClick($element) {
         return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByTestHook($element)))
-        .then(() => this.base_action.findElementByTestHook($element).click())
-        .then(() => log.info('Wait element by TestHook:'+'('+$element +')'+'to be clickable and click'));
+        .then(() => {
+            this.base_action.findElementByTestHook($element).click();
+            log.info('Wait element by TestHook:'+'('+$element +')'+'to be clickable and click');
+        })
     }
 
     /**
@@ -70,8 +80,10 @@ class wait_action {
      */
     waitElementByNameAndClick($element) {
         return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByName($element)))
-        .then(() => this.base_action.findElementByName($element).click())
-        .then(() => log.info('Wait element by Name:'+'('+$element +')'+'to be clickable and click'));
+        .then(() => {
+            this.base_action.findElementByName($element).click();
+            log.info('Wait element by Name:'+'('+$element +')'+'to be clickable and click');
+        })
     }
 
     /**
@@ -80,8 +92,10 @@ class wait_action {
      */
     waitElementByclassNameAndClick($element) {
         return protractor.browser.wait(EC.elementToBeClickable(this.base_action.findElementByClassName($element)))
-        .then(() => this.base_action.findElementByClassName($element).click())
-        .then(() => log.info('Wait element by Class name:'+'('+$element +')'+'to be clickable and click'));
+        .then(() => {
+            this.base_action.findElementByClassName($element).click();
+            log.info('Wait element by Class name:'+'('+$element +')'+'to be clickable and click');
+        })
     }
     
     /**
@@ -92,8 +106,10 @@ class wait_action {
      */
     waitElementByIdAndType($element, timeOut, string) {
         return this.waitTillVisible(this.base_action.findElementById($element), timeOut)
-        .then(() => this.base_action.findElementById($element).sendKeys(string))
-        .then(() => log.info('Wait element By Id:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
+        .then(() => {
+            this.base_action.findElementById($element).sendKeys(string);
+            log.info('Wait element By Id:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')');
+        })
     }
     
     /**
@@ -104,8 +120,10 @@ class wait_action {
      */
     waitElementByCssAndType($element, timeOut, string) {
         return this.waitTillVisible(this.base_action.findElementByCss($element), timeOut)
-        .then(() => this.base_action.findElementByCss($element).sendKeys(string))
-        .then(() => log.info('Wait element By Css:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
+        .then(() => {
+            this.base_action.findElementByCss($element).sendKeys(string);
+            log.info('Wait element By Css:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')');
+        })
     }
     
     /**
@@ -116,8 +134,10 @@ class wait_action {
      */
     waitElementByXpathAndType($element, timeOut, string) {
         return this.waitTillVisible(this.base_action.findElementByXpath($element), timeOut)
-        .then(() => this.base_action.findElementByXpath($element).sendKeys(string))
-        .then(() => log.info('Wait element By Xpath:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
+        .then(() => {
+            this.base_action.findElementByXpath($element).sendKeys(string);
+            log.info('Wait element By Xpath:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')');
+        })
     }
     
      /**
@@ -128,10 +148,12 @@ class wait_action {
      */
     waitElementByLinkTextAndType($element, timeOut, string) {
         return this.waitTillVisible(this.base_action.findElementByLinkText($element), timeOut)
-        .then(() => this.base_action.findElementByLinkText($element).sendKeys(string))
-        .then(() => log.info('Wait element By LinkText:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
+        .then(() => {
+            this.base_action.findElementByLinkText($element).sendKeys(string);
+            log.info('Wait element By LinkText:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')');
+        })    
     }
-    
+ 
     /**
      * Wait element By TestHook and type
      * @param {protractor.ElementFinder} element - location of the element .
@@ -140,8 +162,10 @@ class wait_action {
      */
     waitElementByTestHookAndType($element, timeOut, string) {
         return this.waitTillVisible(this.base_action.findElementByTestHook($element), timeOut)
-        .then(() => this.base_action.findElementByTestHook($element).sendKeys(string))
-        .then(() => log.info('Wait element By TestHook:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
+        .then(() => {
+            this.base_action.findElementByTestHook($element).sendKeys(string);
+            log.info('Wait element By TestHook:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')');
+        })
     }
     
     /**
@@ -152,8 +176,10 @@ class wait_action {
      */
     waitElementByNameAndType($element, timeOut, string) {
         return this.waitTillVisible(this.base_action.findElementByName($element), timeOut)
-        .then(() => this.base_action.findElementByName($element).sendKeys(string))
-        .then(() => log.info('Wait element By Name:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
+        .then(() => {
+            this.base_action.findElementByName($element).sendKeys(string);
+            log.info('Wait element By Name:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')');
+        })
     }
     
     /**
@@ -164,8 +190,10 @@ class wait_action {
      */
     waitElementByClassNameAndType($element, timeOut, string) {
         return this.waitTillVisible(this.base_action.findElementByClassName($element), timeOut)
-        .then(() => this.base_action.findElementByClassName($element).sendKeys(string))
-        .then(() => log.info('Wait element By Class name:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')'));
+        .then(() => {
+            this.base_action.findElementByClassName($element).sendKeys(string);
+            log.info('Wait element By Class name:'+'('+ $element + ')' + 'waiting time:' + '(' + timeOut + ')' + 'and type text:' + '('+ string + ')');
+        })
     }
 
     /**
