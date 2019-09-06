@@ -51,6 +51,17 @@ https://nodejs.org/en/download/
 npm install
 ```
 
+* Install again webdriver-manager if you have to change version of Webdriver
+
+```sh
+npm install -g webdriver-manager
+```
+* Check status and versions that have webdriver-manager
+
+```sh
+webdriver-manager status
+```
+
 * Then first step is to fire up the selenium server which could be done in many ways,  **webdriver-manager** proves very handy for this.The below command should download the **chrome & gecko driver** binaries locally for you!
 
 ```sh
