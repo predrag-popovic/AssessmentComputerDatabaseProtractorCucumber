@@ -97,15 +97,26 @@ webdriver-manager update --versions.chrome=2.46
 ```
 npm test
 ```
+or you can use following command to run test
+
+```
+protractor ./config/protractor.config.js
+```
+
+also you can run only feature that have a tags
+
+```
+protractor ./config/protractor.config.js --cucumberOpts.tags="@RegressionTest"
+```
 
 ## Writing Features
 
 ``` 
-Feature: To search allure reports in google
-    @AllureScenario
-    Scenario: Allure Reports Google
+Feature: To search Cucumber reports in google
+    @CucumberScenario
+    Scenario: Cucumber Reports Google
         Given I am on google page
-        When I type "allure reports"
+        When I type "cucumber reports"
         Then I click search button
         Then I clear search textbox
 ```
@@ -156,7 +167,7 @@ Following configuration shows to call specific tags from feature files
 cucumberOpts: {
     strict: true,
     format: 'json:./reports/json/cucumber_report.json',
-    require: ["../stepDefinitions/*.js", "../support/*.js"],
+    require: ["../stepDefinitions/*.js", "../utils/*.js"],
     tags: "@RegressionTest or @SmokeTest",
 }
 ```
@@ -264,5 +275,39 @@ plugins: [{
 ---
 ![cucumberreporterscreen](https://raw.githubusercontent.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber/master/images/multipleCucumberHtmlReporter2.png)
 
-## Contributions
+# Run automation test through Jenkins
+
+Before executing the tests you need to have Selenium Hub & Node running. You have already downloaded hub_manual.bat & node_manual.bat in the prerequisites. Launch both the bat files.
+
+Note: To ensure your hub is working, open http://localhost:4444/grid/console in any browser, you will see chrome instances. If you don't see those instances then there is something wrong with your hub & node setup.
+
+If Selenium Grid is successfully configured, in Jenkins workspace you create your project and past your automation test. When you do that, you need to install necessary libraries with command:
+
+```
+npm install
+```
+
+After that you need to properly configure build job for your automation test. When you open build configure, you need to set up how do you whant to execute your build.
+Choose to execute with windows batch command:
+
+```
+npm test
+```
+
+If you want to generate cucumber report through Jenkins you need to install plugins for Cucumber on Jenkins. In configure build job you need to add Post-build Action in this case cucumber reports and add path to JSON reports:
+
+```
+./reports/singleBrowser/
+```
+### Features statistics
+![cucumberreporterscreen](https://raw.githubusercontent.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber/master/images/jenkinsCucumberReportScenarios.png)
+---
+### Trends statistics
+![cucumberreporterscreen](https://raw.githubusercontent.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber/master/images/jenkisCucumberReportTrends.png)
+---
+### Tags statistics
+![cucumberreporterscreen](https://raw.githubusercontent.com/predrag-popovic/AssessmentComputerDatabaseProtractorCucumber/master/images/jenkisCucumberReportTags.png)
+
+
+# Contributions
 For contributors who want to improve this repo by contributing some code, reporting bugs, issues or improving documentation - PR's are highly welcome, please maintain the coding style , folder structure , detailed description of documentation and bugs/issues with examples if possible.
